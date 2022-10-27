@@ -21,9 +21,10 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>Les planètes du système solaire</h1>
-        <Search setData={setData} getData={getData} />
+        <Search setData={setData} />
       </div>
-      <h2 className="subtitle">Résultat(s) :</h2>
+      {/* <h2 className="subtitle">Résultat(s) :</h2> */}
+
       <List data={data} />
     </div>
   );
