@@ -1,0 +1,30 @@
+@import "../../style/App.scss"; 
+
+.container-planet {
+    div {
+        width: 100%;
+        height: 15rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-attachment: fixed;
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.375);
+        }
+
+        h2 {
+            z-index: 9;
+            color: $white;
+            text-transform: uppercase;
+        }
+    }
+}

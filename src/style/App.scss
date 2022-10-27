@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'poppins';
+    src: url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+}
+
+// RESPONSIVE
+@mixin smallMobile() {
+    @media screen and (min-width: 325px) {
+        @content;
+    }
+}
+
+@mixin mobile() {
+    @media screen and (min-width: 850px) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop() {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+$white: white;
+$light: rgb(230, 230, 230);
+$dark: #2E384B;
+
+.container {
+    width: 100%;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+
+    h1 {
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        font-size: 20px;
+
+        @include mobile {
+            font-size: 30px;
+        }
+    }
+}
+
+.subtitle {
+    margin: 2rem 0 0 2rem;
+    color: $white;
+}
