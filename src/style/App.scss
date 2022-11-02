@@ -34,20 +34,41 @@ $dark: #2E384B;
 
 .container {
     width: 100%;
-    padding: 5rem 0;
+    padding: 2rem 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: $white;
 
-    h1 {
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-        font-size: 20px;
+    @include mobile {
+        padding: 2rem 4rem;
+        flex-direction: row;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
 
         @include mobile {
-            font-size: 30px;
+            margin-bottom: 0;
+        }
+
+        img {
+            height: 2.5rem;
+            margin-right: 0.5rem;
+            display: none;
+
+            @include mobile {
+                display: block;
+            }
+        }
+    
+        h1 {
+            text-transform: uppercase;
+            font-size: 18px;
+            text-align: center;
         }
     }
 }

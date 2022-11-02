@@ -20,7 +20,10 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Les planètes du système solaire</h1>
+        <div className="title">
+          <img src="./favicon.png" alt="logo" />
+          <h1>Les planètes du système solaire</h1>
+        </div>
         <Search setData={setData} />
       </div>
       <List data={data} />
