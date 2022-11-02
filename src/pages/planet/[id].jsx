@@ -6,18 +6,17 @@ import "./index.scss";
 export function Planet() {
     const [data, setData] = useState()
     const params = useParams();
+    const urlApi = "https://api.le-systeme-solaire.net/rest/bodies";
 
     useEffect(() => {
         getPlanetInfo()
     }, [])
 
     const getPlanetInfo = async () => {
-        const rep = await fetch(`https://api.le-systeme-solaire.net/rest/bodies/${params.id}`);
+        const rep = await fetch(`${urlApi}/${params.id}`);
         const data = await rep.json();
         setData(data);
     }
-
-    console.log(data)
 
     return (
         <>
@@ -26,17 +25,17 @@ export function Planet() {
                     <div className="title" style={{backgroundImage: `url("../../planets/${data.id}.jpeg")` }}>
                         <div className="overlay"></div>
                         <h2>{data.name}</h2>
-                        <img src={`../planets/${data.id}.jpeg`}/>
+                        <img alt={data.id} src={`../planets/${data.id}.jpeg`}/>
                     </div>
 
                     <div className="planet-infos">
-                            {data.bodyType && <p>Type : {data.bodyType}</p>}
-                            {data.englishName && <p>Nom en anglais : {data.englishName}</p>}
-                            {data.discoveredBy && <p>Découvert par {data.discoveredBy}</p>}
-                            {data.discoveryDate && <p>Découvert le {data.discoveryDate}</p>}
-                            {data.density && <p>Densité : {data.density}</p>}
-                            {data.gravity && <p>Gravité : {data.gravity}</p>}
-                        </div>
+                        {data.bodyType && <p>Type : {data.bodyType}</p>}
+                        {data.englishName && <p>Nom en anglais : {data.englishName}</p>}
+                        {data.discoveredBy && <p>Découvert par {data.discoveredBy}</p>}
+                        {data.discoveryDate && <p>Découvert le {data.discoveryDate}</p>}
+                        {data.density && <p>Densité : {data.density}</p>}
+                        {data.gravity && <p>Gravité : {data.gravity}</p>}
+                    </div>
                 </div> 
             : <p>Chargement...</p>}
         </>

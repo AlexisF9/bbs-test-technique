@@ -4,15 +4,15 @@ import { Search } from "../components/search";
 
 function App() {
   const [data, setData] = useState();
+  const urlApi =
+    "https://api.le-systeme-solaire.net/rest.php/bodies?filter=isPlanet,eq,true";
 
   useEffect(() => {
     getData();
   }, []);
 
   const getData = async () => {
-    const rep = await fetch(
-      "https://api.le-systeme-solaire.net/rest.php/bodies?filter=isPlanet,eq,true"
-    );
+    const rep = await fetch(urlApi);
     const data = await rep.json();
     setData(data.bodies);
   };
@@ -23,8 +23,6 @@ function App() {
         <h1>Les planètes du système solaire</h1>
         <Search setData={setData} />
       </div>
-      {/* <h2 className="subtitle">Résultat(s) :</h2> */}
-
       <List data={data} />
     </div>
   );
