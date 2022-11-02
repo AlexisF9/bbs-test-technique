@@ -19,7 +19,7 @@
             right: 0;
             left: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.375);
+            background-color: rgba(0, 0, 0, 0.623);
         }
 
         h2 {
@@ -27,59 +27,36 @@
             color: $white;
             text-transform: uppercase;
         }
+
+        img {
+            height: 140px;
+            z-index: 9;
+            position: absolute;
+            bottom: -70px;
+            
+            @include mobile {
+                height: 200px;
+                left: 10%;
+                bottom: -100px;
+            }
+        }
     }
 
     h3, li, p {
         color: $white;
     }
-
-    .infos {
-        margin: 2rem 1rem;
-
-        @include smallMobile {
-            margin: 4rem 0;
-            display: flex;
-            justify-content: center;
-        }
     
-        .planet-infos {
-            max-width: auto;
+    .planet-infos {
+        margin-left: 1rem;
+        margin-top: 6rem;
 
-            @include smallMobile {
-                margin-right: 4rem;
-                max-width: 300px;
-            }
-
-            img {
-                width: 100%;
-                margin-bottom: 1rem;
-
-                @include smallMobile {
-                    max-width: 300px;
-                }
-            }
-
-            p {
-                margin-bottom: 0.5rem;
-            }
+        @include mobile {
+            margin-top: 8rem;
+            margin-left: 10%;
         }
-    
-        .moons-list {
-            margin-top: 2rem;
-
-            @include smallMobile {
-                margin-top: 0;
-            }
-
-            ul {
-                list-style: none;
-            }
-
-            h3 {
-                margin-bottom: 1rem;
-            }
+        
+        p {
+            margin-bottom: 0.5rem;
         }
     }
-
-    
 }
