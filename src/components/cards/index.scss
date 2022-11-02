@@ -1,7 +1,7 @@
 @import "../../style/App.scss"; 
 
 .card {
-
+    transition: transform 0.3s!important;
     position: relative;
 
     &-title {
@@ -12,3 +12,7 @@
         color: white;
     }
 }
+
+.card:hover {
+    transform: scale(1.05);
+  }

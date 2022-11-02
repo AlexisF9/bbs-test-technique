@@ -29,15 +29,57 @@
         }
     }
 
-    .planet-infos {
-        padding: 4rem 0 0 4rem;
+    h3, li, p {
+        color: $white;
+    }
 
-        h3 {
-            margin-bottom: 1rem;
+    .infos {
+        margin: 2rem 1rem;
+
+        @include smallMobile {
+            margin: 4rem 0;
+            display: flex;
+            justify-content: center;
         }
+    
+        .planet-infos {
+            max-width: auto;
 
-        h3, li, p {
-            color: $white;
+            @include smallMobile {
+                margin-right: 4rem;
+                max-width: 300px;
+            }
+
+            img {
+                width: 100%;
+                margin-bottom: 1rem;
+
+                @include smallMobile {
+                    max-width: 300px;
+                }
+            }
+
+            p {
+                margin-bottom: 0.5rem;
+            }
+        }
+    
+        .moons-list {
+            margin-top: 2rem;
+
+            @include smallMobile {
+                margin-top: 0;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            h3 {
+                margin-bottom: 1rem;
+            }
         }
     }
+
+    
 }

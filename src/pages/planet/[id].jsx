@@ -28,19 +28,29 @@ export function Planet() {
                         <h2>{data.name}</h2>
                     </div>
 
-                    <div className="planet-infos">
-                        <h3>Lunes :</h3>
-                        {data.moons ? <ul>
-                            {data.moons.map((item, i) => {
-                                return (
-                                    <li key={i}>{item.moon}</li>
-                                )
-                            })}
-                        </ul> : <p>Pas de lunes</p>}
+                    <div className="infos">
+                        <div className="planet-infos">
+                            <img src={`../planets/${data.id}.jpeg`}/>
+                            {data.bodyType && <p>Type : {data.bodyType}</p>}
+                            {data.englishName && <p>Nom en anglais : {data.englishName}</p>}
+                            {data.discoveredBy && <p>Découvert par {data.discoveredBy}</p>}
+                            {data.discoveryDate && <p>Découvert le {data.discoveryDate}</p>}
+                            {data.density && <p>Densité : {data.density}</p>}
+                            {data.gravity && <p>Gravité : {data.gravity}</p>}
+                        </div>
+                        <div className="moons-list">
+                            <h3>Lunes :</h3>
+                            {data.moons ? <ul>
+                                {data.moons.map((item, i) => {
+                                    return (
+                                        <li key={i}>{item.moon}</li>
+                                    )
+                                })}
+                            </ul> : <p>Pas de lunes</p>}
+                        </div>
                     </div>
-                    
                 </div> 
-            : <p>Chargement</p>}
+            : <p>Chargement...</p>}
         </>
     )
 }

@@ -10,7 +10,7 @@ export function Cards(props) {
 
     return (
       <Link to={`/planet/${data.id}`} data={data}>
-        <Card className="card" sx={{ "text-align": "center" }}>
+        <Card className="card" sx={{ "text-align": "center", "border-radius": "20px" }}>
           <CardMedia
             component="img"
             alt={data.name}
